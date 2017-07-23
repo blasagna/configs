@@ -180,14 +180,19 @@ let g:neoformat_c_clangformat = {
             \ 'exe': 'clang-format',
             \ 'args': ['-style="{BasedOnStyle: google, BreakBeforeBraces: Allman }"'],
             \ 'stdin': 1}
+let g:neoformat_python_rustfmt = {
+            \ 'exe': 'rustfmt',
+            \ 'args': [],
+            \ 'stdin': 1}
 let g:neoformat_enabled_python = ['yapf']
 let g:neoformat_enabled_c = ['clangformat']
 let g:neoformat_enabled_cpp = ['clangformat']
+let g:neoformat_enabled_rust = ['rustfmt']
 
-"augroup fmt
-"    autocmd!
-"    autocmd BufWritePre * Neoformat
-"augroup END
+augroup fmt
+    autocmd!
+    autocmd BufWritePre * Neoformat
+augroup END
 
 " yapf bindings
 map <C-o> :YapfFullFormat<CR>
