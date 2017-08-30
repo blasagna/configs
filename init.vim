@@ -118,6 +118,7 @@ filetype plugin indent on    " required
 set number
 set ruler
 set cursorline
+set mouse=a
 
 " set colorscheme
 set background=dark
