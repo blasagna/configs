@@ -136,3 +136,8 @@ export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f ~/.config/exercism/exercism_completion.bash ]; then
+  . ~/.config/exercism/exercism_completion.bash
+fi
+
