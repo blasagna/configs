@@ -91,7 +91,7 @@ Plugin 'Yggdroot/indentLine'
 
 Plugin 'scrooloose/nerdtree'
 
-"Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 
 Plugin 'vim-airline/vim-airline'
 
