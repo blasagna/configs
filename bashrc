@@ -130,3 +130,14 @@ alias gl='git log --graph --decorate --oneline'
 alias cl='clear'
 
 export TERM="screen-256color"
+
+export GOPATH=$HOME/go
+export GOBIN=$GOPATH/bin
+export PATH=$PATH:$GOBIN
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+if [ -f ~/.config/exercism/exercism_completion.bash ]; then
+  . ~/.config/exercism/exercism_completion.bash
+fi
+
