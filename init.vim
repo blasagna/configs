@@ -91,11 +91,11 @@ Plugin 'Yggdroot/indentLine'
 
 Plugin 'scrooloose/nerdtree'
 
-"Plugin 'rust-lang/rust.vim'
+Plugin 'rust-lang/rust.vim'
 
 Plugin 'vim-airline/vim-airline'
 
-Plugin 'w0rp/ale'
+Plugin 'vim-syntastic/syntastic'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -121,14 +121,25 @@ set cursorline
 set mouse=a
 
 " set colorscheme
-set background=dark
-set termguicolors
-colorscheme deep-space
-let g:airline_theme='deep_space'
+"set background=dark
+"set termguicolors
+"set background=light
 
-let g:airline#extensions#ale#enabled = 1
-" ALE lint on save only
-let g:ale_lint_on_text_changed = 'never'
+" code folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=2
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_cpp_compiler = 'g++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " open NERDTree automatically, and on ctrl-n
 " autocmd vimenter * NERDTree
@@ -162,7 +173,7 @@ let g:neoformat_c_clangformat = {
       \ 'exe': 'clang-format',
       \ 'args': ['-style="{BasedOnStyle: google, BreakBeforeBraces: Allman }"'],
       \ 'stdin': 1}
-let g:neoformat_python_rustfmt = {
+let g:neoformat_rust_rustfmt = {
       \ 'exe': 'rustfmt',
       \ 'args': [],
       \ 'stdin': 1}
@@ -287,6 +298,9 @@ set encoding=utf8
 
 " Use Unix as the standard file type
 set ffs=unix,dos,mac
+
+" color column at pos 80
+set colorcolumn=80
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
