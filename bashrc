@@ -125,6 +125,8 @@ alias gcm='git commit -m'
 alias ggs='git status'
 alias gb='git branch -vv' # More verbose and useful display of branches
 alias gl='git log --graph --decorate --oneline'
+alias gco='git checkout'
+alias gf='git log --pretty=format: --name-only --diff-filter=A | sort -u'
 
 # clear alias
 alias cl='clear'
@@ -135,9 +137,21 @@ export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
 
+# activate py3 virtualenv
+alias py3='source /home/bob/ws/py3.venv/bin/activate'
+# activate conda environment
+alias bmi='source activate bmi'
+
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
 if [ -f ~/.config/exercism/exercism_completion.bash ]; then
   . ~/.config/exercism/exercism_completion.bash
 fi
 
+
+# added by Miniconda3 installer
+export PATH="/home/bob/miniconda3/bin:$PATH"
+
+# Show current Git branch on bash prompt
+source /etc/bash_completion.d/git
+PS1="[\[\033[32m\]\w]\[\033[0m\]\$(__git_ps1)\n\[\033[1;36m\]\u\[\033[32m\]$ \[\033[0m\]"
