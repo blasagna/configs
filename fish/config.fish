@@ -28,7 +28,7 @@ alias py3 "source /home/bob/ws/py3.venv/bin/activate"
 alias bmi "source activate bmi"
 
 # added by Miniconda3 installer
-export PATH /home/bob/miniconda3/bin $PATH
+set -x PATH /home/bob/miniconda3/bin $PATH
 
 # add fzf key bindings
 fzf_key_bindings
