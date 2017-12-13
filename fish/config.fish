@@ -24,12 +24,13 @@ set -x PATH $PATH $GOBIN
 
 # activate py3 virtualenv
 alias py3 "source /home/bob/ws/py3.venv/bin/activate"
-# activate conda environment
-alias bmi "source activate bmi"
 
 # added by Miniconda3 installer
 set -x PATH /home/bob/miniconda3/bin $PATH
+source (conda info --root)/etc/fish/conf.d/conda.fish
+# activate conda environment
+alias bmi "conda activate bmi"
 
 # add fzf key bindings
-fzf_key_bindings
+# fzf_key_bindings
 
