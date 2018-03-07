@@ -97,6 +97,8 @@ Plugin 'vim-airline/vim-airline'
 
 Plugin 'vim-syntastic/syntastic'
 
+Plugin 'vmchale/ion-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -131,15 +133,15 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=2
 
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_cpp_compiler = 'g++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+"let g:syntastic_check_on_wq = 0
+"let g:syntastic_cpp_compiler = 'g++'
+"let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 " open NERDTree automatically, and on ctrl-n
 " autocmd vimenter * NERDTree
@@ -167,11 +169,11 @@ let g:neoformat_python_yapf = {
       \ 'stdin': 1}
 let g:neoformat_cpp_clangformat = {
       \ 'exe': 'clang-format',
-      \ 'args': ['-style="{BasedOnStyle: google, BreakBeforeBraces: Allman }"'],
+      \ 'args': ['-style=file'],
       \ 'stdin': 1}
 let g:neoformat_c_clangformat = {
       \ 'exe': 'clang-format',
-      \ 'args': ['-style="{BasedOnStyle: google, BreakBeforeBraces: Allman }"'],
+      \ 'args': ['-style=file'],
       \ 'stdin': 1}
 let g:neoformat_rust_rustfmt = {
       \ 'exe': 'rustfmt',
@@ -182,15 +184,11 @@ let g:neoformat_enabled_c = ['clangformat']
 let g:neoformat_enabled_cpp = ['clangformat']
 let g:neoformat_enabled_rust = ['rustfmt']
 
+
 augroup fmt
   autocmd!
   autocmd BufWritePre * Neoformat
 augroup END
-
-" yapf bindings
-map <C-o> :YapfFullFormat<CR>
-imap <C-o> <ESC>:YapfFormat<CR>i
-vmap <C-o> :YapfFormat<CR>
 
 " easier split navigations
 nnoremap <C-J> <C-W><C-J>
