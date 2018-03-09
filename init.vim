@@ -61,7 +61,8 @@ Plug 'tell-k/vim-autopep8'
 
 Plug 'pignacio/vim-yapf-format'
 
-Plug 'Shougo/deoplete.nvim'
+"Plug 'Shougo/deoplete.nvim'
+Plug 'Valloric/YouCompleteMe'
 
 Plug 'sbdchd/neoformat'
 
