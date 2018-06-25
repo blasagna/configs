@@ -133,6 +133,7 @@ alias cl='clear'
 
 export TERM="screen-256color"
 
+export PATH=$PATH:/usr/local/go/bin
 export GOPATH=$HOME/go
 export GOBIN=$GOPATH/bin
 export PATH=$PATH:$GOBIN
@@ -153,5 +154,5 @@ fi
 export PATH="/home/bob/miniconda3/bin:$PATH"
 
 # Show current Git branch on bash prompt
-source /etc/bash_completion.d/git
+source /etc/bash_completion.d/git-prompt
 PS1="[\[\033[32m\]\w]\[\033[0m\]\$(__git_ps1)\n\[\033[1;36m\]\u\[\033[32m\]$ \[\033[0m\]"
