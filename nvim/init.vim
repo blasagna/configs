@@ -132,12 +132,6 @@ let g:neoformat_basic_format_retab = 1
 let g:neoformat_basic_format_trim = 1
 let g:neoformat_python_yapf = {
       \ 'exe': 'yapf',
-      \ 'args': ['-s 4', '-E'],
-      \ 'replace': 1,
-      \ 'stdin': 1,
-      \ 'no_append': 1}
-let g:neoformat_python_yapf = {
-      \ 'exe': 'yapf',
       \ 'args': [],
       \ 'stdin': 1}
 let g:neoformat_cpp_clangformat = {

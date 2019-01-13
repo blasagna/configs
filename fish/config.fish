@@ -5,6 +5,8 @@ alias l "ls -CF"
 
 alias dco "docker-compose"
 
+alias cl "clear"
+
 # git aliases
 # source ~/.git/git-completion.bash
 alias gtd "git difftool -t vimdiff"
@@ -15,22 +17,18 @@ alias gl "git log --graph --decorate --oneline"
 alias gco "git checkout"
 alias gf "git log --pretty=format: --name-only --diff-filter=A | sort -u"
 
-# clear alias
-alias cl "clear"
-
+# golang
 set -x GOPATH $HOME/go
 set -x GOBIN $GOPATH/bin
 set -x PATH $PATH $GOBIN
-
-# activate py3 virtualenv
-alias py3 "source /home/bob/ws/py3.venv/bin/activate"
+set -x PATH $PATH /usr/local/go/bin
 
 # added by Miniconda3 installer
 set -x PATH /home/bob/miniconda3/bin $PATH
 source (conda info --root)/etc/fish/conf.d/conda.fish
-# activate conda environment
-alias bmi "conda activate bmi"
 
-# add fzf key bindings
-# fzf_key_bindings
+# rust
+source ~/.cargo/env
 
+# binaries
+set -x PATH /home/bob/bin $PATH
