@@ -16,6 +16,7 @@ alias gb "git branch -vv" # More verbose and useful display of branches
 alias gl "git log --graph --decorate --oneline"
 alias gco "git checkout"
 alias gf "git log --pretty=format: --name-only --diff-filter=A | sort -u"
+alias gp "git pull"
 
 # golang
 set -x GOPATH $HOME/go
