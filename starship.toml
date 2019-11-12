@@ -1,0 +1,29 @@
+[aws]
+disabled = true
+
+[battery]
+full_symbol = "🔋"
+charging_symbol = "⚡️"
+discharging_symbol = "💀"
+
+[battery.display]
+threshold = 10
+style = "bold red"
+
+[character]
+symbol = "➜"
+error_symbol = "✗"
+use_symbol_for_status = true
+
+[cmd_duration]
+min_time = 2
+prefix = "duration "
+
+[conda]
+symbol = "env "
+
+[directory]
+fish_style_pwd_dir_length = 1
+
+[username]
+show_always = true
