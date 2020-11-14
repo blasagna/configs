@@ -17,7 +17,7 @@ use_symbol_for_status = true
 
 [cmd_duration]
 min_time = 2
-prefix = "duration "
+format = "took [$duration]($style) "
 
 [conda]
 symbol = "env "
