@@ -116,29 +116,38 @@ if ! shopt -oq posix; then
   fi
 fi
 
-alias dco='docker-compose'
-
 # git aliases
 # source ~/.git/git-completion.bash
-alias gtd='git difftool -t vimdiff'
-alias gcm='git commit -m'
+alias ggtd='git difftool -t vimdiff'
+alias ggc='git commit'
 alias ggs='git status'
-alias gb='git branch -vv' # More verbose and useful display of branches
-alias gl='git log --graph --decorate --oneline'
-alias gco='git checkout'
-alias gf='git log --pretty=format: --name-only --diff-filter=A | sort -u'
-alias gp='git pull'
+alias ggb='git branch -vv' # More verbose and useful display of branches
+alias ggl='git log --graph --decorate --oneline'
+alias ggco='git checkout'
+alias ggf='git log --pretty=format: --name-only --diff-filter=A | sort -u'
+alias ggp='git pull'
 
 # clear alias
 alias cl='clear'
 
-export TERM="screen-256color"
+# export PATH=$PATH:/usr/local/go/bin
+# export GOPATH=$HOME/go
+# export GOBIN=$GOPATH/bin
+# export PATH=$PATH:$GOBIN
 
-export PATH=$PATH:/usr/local/go/bin
-export GOPATH=$HOME/go
-export GOBIN=$GOPATH/bin
-export PATH=$PATH:$GOBIN
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+__conda_setup="$('/home/bob/miniconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
+if [ $? -eq 0 ]; then
+    eval "$__conda_setup"
+else
+    if [ -f "/home/bob/miniconda3/etc/profile.d/conda.sh" ]; then
+        . "/home/bob/miniconda3/etc/profile.d/conda.sh"
+    else
+        export PATH="/home/bob/miniconda3/bin:$PATH"
+    fi
+fi
+unset __conda_setup
+# <<< conda initialize <<<
 
-# Show current Git branch on bash prompt
-source /etc/bash_completion.d/git-prompt
-PS1="[\[\033[32m\]\w]\[\033[0m\]\$(__git_ps1)\n\[\033[1;36m\]\u\[\033[32m\]$ \[\033[0m\]"
+ eval "$(starship init bash)"
