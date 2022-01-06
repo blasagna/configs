@@ -1,29 +1,53 @@
-[aws]
-disabled = true
-
-[battery]
-full_symbol = "🔋"
-charging_symbol = "⚡️"
-discharging_symbol = "💀"
-
-[battery.display]
-threshold = 10
-style = "bold red"
-
-[character]
-symbol = "➜"
-error_symbol = "✗"
-use_symbol_for_status = true
-
 [cmd_duration]
-min_time = 2
-format = "took [$duration]($style) "
-
-[conda]
-symbol = "env "
-
-[directory]
-fish_style_pwd_dir_length = 1
+min_time = 2_000
 
 [username]
 show_always = true
+
+[character]
+success_symbol = "[>](bold green)"
+error_symbol = "[x](bold red)"
+vicmd_symbol = "[<](bold green)"
+
+[git_commit]
+tag_symbol = " tag "
+
+[git_status]
+ahead = ">"
+behind = "<"
+diverged = "<>"
+renamed = "r"
+deleted = "x"
+
+[aws]
+symbol = "aws "
+disabled = true
+
+[conda]
+symbol = "conda "
+
+[directory]
+read_only = " ro"
+fish_style_pwd_dir_length = 1
+
+[git_branch]
+symbol = "git "
+
+[hg_branch]
+symbol = "hg "
+disabled = false
+
+[java]
+symbol = "java "
+
+[nodejs]
+symbol = "nodejs "
+
+[memory_usage]
+symbol = "memory "
+
+[package]
+symbol = "pkg "
+
+[python]
+symbol = "py "
