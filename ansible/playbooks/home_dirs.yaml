@@ -7,3 +7,15 @@
     ansible.builtin.file:
       path: ~/work
       state: directory
+  - name: Create dot local bin directory
+    ansible.builtin.file:
+      path: ~/.local/bin
+      state: directory
+  - name: Create dot local lib directory
+    ansible.builtin.file:
+      path: ~/.local/lib
+      state: directory
+  - name: Create dot config directory
+    ansible.builtin.file:
+      path: ~/.config
+      state: directory
