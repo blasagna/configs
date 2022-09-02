@@ -1,0 +1,9 @@
+---
+- name: Create directories within user home
+  hosts: localhost
+
+  tasks:
+  - name: Create work directory 
+    ansible.builtin.file:
+      path: ~/work
+      state: directory
