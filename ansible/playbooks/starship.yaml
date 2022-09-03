@@ -1,0 +1,18 @@
+---
+- name: Install and configure starship for shell
+  hosts: localhost
+
+  tasks:
+  - name: Download install script
+    ansible.builtin.get_url:
+      url: https://starship.rs/install.sh
+      dest: ~/install_starship.sh
+  - name: Run install script  # Only runs if txt file doesn't exist
+    ansible.builtin.shell: sh ~/install_starship.sh -y -b ~/.local/bin >> install_starship.txt
+    args:
+      chdir: ~/
+      creates: install_starship.txt
+  - name: Copy config file
+    ansible.builtin.copy:
+      src: ~/configs/starship.toml
+      dest: ~/.config/starship.toml

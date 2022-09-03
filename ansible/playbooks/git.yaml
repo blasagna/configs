@@ -1,0 +1,10 @@
+---
+- name: Install and configure git
+  hosts: localhost
+
+  tasks:
+  - name: Install git
+    ansible.builtin.apt:
+      name: git 
+      state: present
+    become: yes

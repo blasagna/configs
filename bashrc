@@ -136,4 +136,4 @@ export PATH=$PATH:$HOME/.local/bin
 # export GOBIN=$GOPATH/bin
 # export PATH=$PATH:$GOBIN
 
- # eval "$(starship init bash)"
+ eval "$(starship init bash)"
