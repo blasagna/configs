@@ -19,3 +19,11 @@
     ansible.builtin.file:
       path: ~/.config
       state: directory
+  - name: Backup bashrc file
+    ansible.builtin.copy:
+      src: ~/.bashrc
+      dest: ~/.bashrc.backup
+  - name: Copy bashrc file
+    ansible.builtin.copy:
+      src: ~/configs/bashrc
+      dest: ~/.bashrc
