@@ -20,3 +20,4 @@ New-Alias -Name "ggm" -Value Git-Merge
 New-Alias -Name "ggc" -Value Git-Commit
 New-Alias -Name "ggco" -Value Git-Checkout
 
+Invoke-Expression (&starship init powershell)

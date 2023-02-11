@@ -9,6 +9,9 @@ success_symbol = "[>](bold green)"
 error_symbol = "[x](bold red)"
 vicmd_symbol = "[<](bold green)"
 
+[shell]
+disabled = false
+
 [git_commit]
 tag_symbol = " tag "
 
