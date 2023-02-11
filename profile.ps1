@@ -1,8 +1,7 @@
 Function New-File {New-Item -ItemType file @args}
 New-Alias -Name "touch" -Value New-File
 
-Function Clear {clear}
-New-Alias -Name "cl" -Value Clear
+New-Alias -Name "cl" -Value Clear-Host
 
 Function Git-Fetch {git fetch}
 Function Git-Pull {git pull}
