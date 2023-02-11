@@ -14,5 +14,5 @@
       creates: install_starship.txt
   - name: Copy config file
     ansible.builtin.copy:
-      src: ~/configs/starship.toml
+      src: ~/work/configs/starship.toml
       dest: ~/.config/starship.toml

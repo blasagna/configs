@@ -25,5 +25,5 @@
       dest: ~/.bashrc.backup
   - name: Copy bashrc file
     ansible.builtin.copy:
-      src: ~/configs/bashrc
+      src: ~/work/configs/bashrc
       dest: ~/.bashrc
