@@ -21,11 +21,19 @@ set smartindent
 " Highlight the current line
 set cursorline
 
+" Case insensitive search unless pattern contains uppercase
+set ignorecase
+set smartcase
+
 " Enable mouse support
 set mouse=a
 
 " Better command-line completion
 set wildmenu
 
+" Do not fold by default
+set foldlevelstart=99
+
 " Markdown-specific: Enable basic folding
 let g:markdown_folding = 1
+let g:markdown_fold_style = 'nested'
