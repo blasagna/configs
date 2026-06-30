@@ -1,0 +1,20 @@
+[editor]
+# line-number = "relative"       # relative line numbers (great for motions like 5j)
+cursorline = true              # highlight the line the cursor is on
+completion-trigger-len = 1     # trigger autocomplete sooner
+bufferline = "always"          # show open buffers at the top
+
+[editor.cursor-shape]
+insert = "bar"                 # bar cursor in insert mode, block in normal
+normal = "block"
+
+[editor.whitespace.render]
+tab = "all"                    # show tab characters visually
+space = "all"                  # highlight spaces
+newline = "all"
+
+[editor.indent-guides]
+render = true                  # show indent guides
+
+[editor.soft-wrap]
+enable = true
