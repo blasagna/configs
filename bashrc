@@ -115,25 +115,12 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+. "$HOME/.cargo/env"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$HOME/.pixi/bin:$PATH"
+export PATH="$PATH:/usr/local/go/bin"
+export PATH="$PATH:$HOME/cmake-4.1.2-linux-x86_64/bin"
 
-# git aliases
-# source ~/.git/git-completion.bash
-alias ggtd='git difftool -t vimdiff'
-alias ggc='git commit'
-alias ggs='git status'
-alias ggb='git branch -vv' # More verbose and useful display of branches
-alias ggl='git log --graph --decorate --oneline'
-alias ggco='git checkout'
-alias ggf='git log --pretty=format: --name-only --diff-filter=A | sort -u'
-alias ggp='git pull'
+export EDITOR="/usr/bin/vim"
+set -o vi
 
-# clear alias
-alias cl='clear'
-
-export PATH=$PATH:$HOME/.local/bin
-# export PATH=$PATH:/usr/local/go/bin
-# export GOPATH=$HOME/go
-# export GOBIN=$GOPATH/bin
-# export PATH=$PATH:$GOBIN
-
-eval "$(starship init bash)"
