@@ -1,4 +1,5 @@
 " Basic Vim 9 Configuration
+set nocompatible
 
 " Enable line numbers
 set number
@@ -37,3 +38,35 @@ set foldlevelstart=99
 " Markdown-specific: Enable basic folding
 let g:markdown_folding = 1
 let g:markdown_fold_style = 'nested'
+
+" Rust-specific configuration (rust.vim)
+let g:rustfmt_autosave = 1
+let g:rustfmt_fail_silently = 0
+let g:rust_fold = 1
+
+" LSP configuration (yegappan/lsp)
+let g:lsp_servers = [#{
+    \   name: 'rust-analyzer',
+    \   filetype: ['rust'],
+    \   path: 'rust-analyzer',
+    \   args: [],
+    \   syncInit: v:true
+    \ }]
+
+let g:lsp_options = #{
+    \   autoComplete: v:true,
+    \   autoHighlightDiags: v:true,
+    \   showDiagWithSign: v:true,
+    \   showInlayHints: v:true,
+    \   showSignature: v:true
+    \ }
+
+" LSP key mappings
+nnoremap <silent> gd <cmd>LspGotoDefinition<CR>
+nnoremap <silent> K <cmd>LspHover<CR>
+nnoremap <silent> gr <cmd>LspShowReferences<CR>
+nnoremap <silent> <leader>rn <cmd>LspRename<CR>
+nnoremap <silent> <leader>ca <cmd>LspCodeAction<CR>
+nnoremap <silent> [d <cmd>LspDiag prev<CR>
+nnoremap <silent> ]d <cmd>LspDiag next<CR>
+
