@@ -1,0 +1,12 @@
+# Global clangd defaults. A project's compile_commands.json always wins over
+# this; these only fill gaps.
+#
+# Fedora's clang defaults to C++17 while its gcc defaults to C++20, so a file
+# clangd has no compile command for (a scratch file, a brand-new source not yet
+# in a BUILD target) gets diagnosed as C++17 and every C++20 facility --
+# std::popcount, std::format, ranges, concepts -- reads as an error even though
+# the Bazel build of the same file succeeds. Pin the standard to match.
+If:
+  PathMatch: [.*\.cpp, .*\.cc, .*\.cxx, .*\.c\+\+, .*\.hpp, .*\.hh, .*\.hxx, .*\.ipp]
+CompileFlags:
+  Add: [-std=c++20]
