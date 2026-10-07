@@ -1,0 +1,8 @@
+file_manager:
+  command: yazi
+  options:
+    - --chooser-file
+    - ${tmp_file}
+
+search_select:
+  max_results: 10
